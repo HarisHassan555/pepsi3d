@@ -4,13 +4,11 @@ import pepsilogo from './assets/pepsilogo.png'
 
 const App = () => {
   return (
-    <div className="flex flex-col bg-gradient-to-r from-[#07090F] from-10% via-[#050507] via-50% to-[#07090F] to-90%">
-          <img className='w-[4rem] md:w-[8rem]' src={pepsilogo} alt="" />
-      <HS />
+    <div className="flex flex-col relative">
+      <HS/>
+      <img className='w-[8rem] md:w-[12rem] absolute top-1 left-1' src={pepsilogo} alt="" />
     </div>
   );
 };
 
 export default App;
-
-// bg-gradient-to-r from-[#07090F] from-10% via-[#050507] via-50% to-[#07090F] to-90%

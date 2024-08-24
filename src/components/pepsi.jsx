@@ -34,15 +34,15 @@ const SimpleModel = () => {
     const center = new THREE.Vector3();
     box.getCenter(center);
 
-    setCameraPosition([center.x, center.y, center.z + 0.5]); // Adjust camera position as needed
+    setCameraPosition([center.x, center.y, center.z + 0.5]);
   }, [scene]);
 
   return (
-    <Canvas className='flex flex-col w-full'>
+    <Canvas className='lg:basis-2/4 basis-2/3 px-[3rem] lg:px-0'>
       <PerspectiveCamera makeDefault position={cameraPosition} fov={75} />
       <ambientLight intensity={2} />
       <directionalLight position={[-5, 1, 3]} intensity={4} />
-      <RotatingModel classname='flex self-center' scene={scene} />
+      <RotatingModel classname='self-center' scene={scene} />
       <OrbitControls enableZoom={false} />
     </Canvas>
   );

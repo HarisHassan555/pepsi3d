@@ -11,6 +11,6 @@
 .combined-gradient {
     background: 
         linear-gradient(to bottom, #1a1a1a 0%, #0e0e96 40%),
-        linear-gradient(to right, rgba(15, 23, 42, 0.8) 10%, rgba(13, 13, 15, 0.9) 50%, rgba(15, 23, 42, 0.8) 90%); /* Horizontal gradient */
-    background-blend-mode: overlay; /* Blend the gradients */
+        linear-gradient(to right, rgba(15, 23, 42, 0.8) 10%, rgba(13, 13, 15, 0.9) 50%, rgba(15, 23, 42, 0.8) 90%);
+    background-blend-mode: overlay;
 }
