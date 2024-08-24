@@ -38,7 +38,7 @@ const SimpleModel = () => {
   }, [scene]);
 
   return (
-    <Canvas className='basis-3/4 px-[2rem] lg:px-0'>
+    <Canvas className='basis-3/4 lg:basis-4/5 px-[2rem] lg:px-0'>
       <PerspectiveCamera makeDefault position={cameraPosition} fov={75} />
       <ambientLight intensity={2} />
       <directionalLight position={[-5, 1, 3]} intensity={4} />
