@@ -1,12 +1,13 @@
 import React from "react";
 import HS from "./components/herosection";
-import pepsilogo from './assets/pepsilogo.png'
+import L from './components/logo'
+
 
 const App = () => {
   return (
-    <div className="flex flex-col relative">
+    <div className="flex flex-col relative combined-gradient">
       <HS/>
-      <img className='w-[8rem] md:w-[12rem] absolute top-1 left-0' src={pepsilogo} alt="" />
+       <L/>
     </div>
   );
 };

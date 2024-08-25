@@ -12,8 +12,10 @@ export default function Herosection() {
         <Pepsi className="basis-2/4"/>
         <TR className="basis-1/4" />
       </div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1.15/2 h-[2rem]">
-        {" "}
+      <div 
+        id="scroll-target" 
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1.15/2 h-[2rem] bg-white"
+      >
         why not meri jaan
       </div>
       <P2 />
