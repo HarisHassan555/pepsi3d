@@ -12,12 +12,12 @@ export default function Topright() {
 
   return (
     <div 
-      className="basis-1/4 self-center flex-col text-center uppercase relative cursor-pointer"
+      className="basis-1/4 self-center flex-col text-center uppercase relative"
     >
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute top-1/2 left-1 w-max transform -translate-x-1/2 -translate-y-1/2">
         <p className="text-blue-500 text-6xl lg:text-4xl xl:text-6xl font-extrabold">welcome</p>
         <p className="text-4xl lg:text-2xl xl:text-4xl font-bold">let's get started</p>
-        <div onClick={scrollToTarget} className="mt-[1rem] text-xl flex flex-col content-center">
+        <div onClick={scrollToTarget} className="mt-[1rem] text-xl flex flex-col content-center cursor-pointer">
           <p>check out the latest drop</p>
           <motion.img
             className="size-[2rem] self-center mt-[1rem]"

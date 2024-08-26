@@ -3,7 +3,7 @@ import CS from "../components/carousel";
 
 export default function Page2() {
   return (
-    <div className="h-screen mt-[2rem] pt-[3rem]">
+    <div id="scroll-target" className="h-screen mt-[2rem] pt-[3rem]">
       <div className="flex relative flex-col lg:flex-row-reverse  ">
       <div className="relative uppercase lg:basis-1/2 text-white tracking-tighter mb-[14rem]">
           <div className="absolute top-[8rem] text-center lg:text-start left-1/2 w-max transform -translate-x-1/2 -translate-y-1/2">
