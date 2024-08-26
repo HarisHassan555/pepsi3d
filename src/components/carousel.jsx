@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Pi1 from '../assets/pi1.jpg';
 import Pi2 from '../assets/pi2.jpg';
 import Pi3 from '../assets/pi3.jpg';
@@ -7,11 +7,31 @@ import Pi5 from '../assets/pi5.jpg';
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imagesToShow, setImagesToShow] = useState(window.innerWidth >= 1024 ? 3 : 2); // Default to 3 if lg or larger
+  const [imageWidth, setImageWidth] = useState(window.innerWidth >= 1024 ? 'calc(33.333% - 10px)' : 'calc(50% - 10px)'); // Default to 33.333% if lg or larger
 
   const images = [Pi1, Pi2, Pi3, Pi4, Pi5];
 
-  // Number of images to show at once
-  const imagesToShow = 3;
+  // Update imagesToShow and imageWidth on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width >= 1024) { // Tailwind's lg breakpoint
+        setImagesToShow(3);
+        setImageWidth('calc(33.333% - 10px)');
+      } else {
+        setImagesToShow(2);
+        setImageWidth('calc(50% - 10px)');
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -36,7 +56,8 @@ export default function Carousel() {
         {visibleImages.map((img, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-[calc(33.333%-10px)] mx-auto"
+            style={{ width: imageWidth }}
+            className="flex-shrink-0 mx-auto"
           >
             <img
               src={img}
