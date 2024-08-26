@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Pi1 from '../assets/pi1.jpg';
 import Pi2 from '../assets/pi2.jpg';
 import Pi3 from '../assets/pi3.jpg';
@@ -7,31 +7,10 @@ import Pi5 from '../assets/pi5.jpg';
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [imagesToShow, setImagesToShow] = useState(window.innerWidth >= 1024 ? 3 : 2); // Default to 3 if lg or larger
-  const [imageWidth, setImageWidth] = useState(window.innerWidth >= 1024 ? 'calc(33.333% - 10px)' : 'calc(50% - 10px)'); // Default to 33.333% if lg or larger
 
   const images = [Pi1, Pi2, Pi3, Pi4, Pi5];
 
-  // Update imagesToShow and imageWidth on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width >= 1024) { // Tailwind's lg breakpoint
-        setImagesToShow(3);
-        setImageWidth('calc(33.333% - 10px)');
-      } else {
-        setImagesToShow(2);
-        setImageWidth('calc(50% - 10px)');
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const imagesToShow = 3;
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -51,25 +30,26 @@ export default function Carousel() {
   }
 
   return (
-    <div id="controls-carousel" className="relative lg:w-[90%] h-[10rem] lg:h-[18rem] px-[2rem] lg:px-[4rem] mt-[2rem] mx-auto">
-      <div className="relative h-[80%] lg:h-[90%] overflow-hidden rounded-lg flex">
+    <div className="relative w-full max-w-screen-lg mx-auto my-4 px-4 lg:px-8">
+      <div className="relative overflow-hidden rounded-lg flex">
         {visibleImages.map((img, index) => (
           <div
             key={index}
-            style={{ width: imageWidth }}
-            className="flex-shrink-0 mx-auto"
+            className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 px-2"
           >
-            <img
-              src={img}
-              className="w-full h-full object-cover rounded-md"
-              alt={`Slide ${index + 1}`}
-            />
+            <div className="w-full h-64 relative">
+              <img
+                src={img}
+                className="w-full h-full object-cover rounded-md"
+                alt={`Slide ${index + 1}`}
+              />
+            </div>
           </div>
         ))}
       </div>
       <button
         type="button"
-        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-0 lg:px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 z-30 flex items-center justify-center p-2 cursor-pointer group focus:outline-none"
         onClick={prevSlide}
       >
         <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
@@ -93,7 +73,7 @@ export default function Carousel() {
       </button>
       <button
         type="button"
-        className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-0 lg:px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-1/2 right-0 transform -translate-y-1/2 z-30 flex items-center justify-center p-2 cursor-pointer group focus:outline-none"
         onClick={nextSlide}
       >
         <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
