@@ -54,7 +54,7 @@ export default function Carousel() {
       >
         <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
           <svg
-            className="w-4 h-4 text-white rtl:rotate-180"
+            className="w-4 h-4 text-red-500 rtl:rotate-180"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -78,7 +78,7 @@ export default function Carousel() {
       >
         <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
           <svg
-            className="w-4 h-4 text-white rtl:rotate-180"
+            className="w-4 h-4 text-red-500 rtl:rotate-180"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
