@@ -31,7 +31,7 @@ export default function Carousel() {
   }
 
   return (
-    <div id="controls-carousel" className="relative lg:w-[90%] h-[10rem] lg:h-[18rem] px-[4rem] mt-[2rem] mx-auto">
+    <div id="controls-carousel" className="relative lg:w-[90%] h-[10rem] lg:h-[18rem] px-[2rem] lg:px-[4rem] mt-[2rem] mx-auto">
       <div className="relative h-[80%] lg:h-[90%] overflow-hidden rounded-lg flex">
         {visibleImages.map((img, index) => (
           <div
@@ -48,7 +48,7 @@ export default function Carousel() {
       </div>
       <button
         type="button"
-        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-0 lg:px-4 cursor-pointer group focus:outline-none"
         onClick={prevSlide}
       >
         <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
@@ -72,7 +72,7 @@ export default function Carousel() {
       </button>
       <button
         type="button"
-        className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-0 lg:px-4 cursor-pointer group focus:outline-none"
         onClick={nextSlide}
       >
         <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
