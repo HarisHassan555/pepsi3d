@@ -31,12 +31,12 @@ export default function Carousel() {
   }
 
   return (
-    <div id="controls-carousel" className="relative lg:w-[90%] h-[12rem] lg:h-[18rem] px-[4rem] mx-auto">
-      <div className="relative h-[90%] overflow-hidden rounded-lg flex">
+    <div id="controls-carousel" className="relative lg:w-[90%] h-[10rem] lg:h-[18rem] px-[4rem] mt-[2rem] mx-auto">
+      <div className="relative h-[80%] lg:h-[90%] overflow-hidden rounded-lg flex">
         {visibleImages.map((img, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-[calc(33.333%-10px)] mx-auto" // Adjust the width and margin here
+            className="flex-shrink-0 w-[calc(33.333%-10px)] mx-auto"
           >
             <img
               src={img}
