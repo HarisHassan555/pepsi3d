@@ -31,7 +31,7 @@ export default function Carousel() {
   }
 
   return (
-    <div id="controls-carousel" className="relative lg:w-[90%] h-[18rem] px-[4rem] mx-auto">
+    <div id="controls-carousel" className="relative lg:w-[90%] h-[12rem] lg:h-[18rem] px-[4rem] mx-auto">
       <div className="relative h-[90%] overflow-hidden rounded-lg flex">
         {visibleImages.map((img, index) => (
           <div
