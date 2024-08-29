@@ -6,11 +6,34 @@ import V1 from './components/video1';
 import Links from './components/links';
 import Carousel2 from "./components/carousel2";
 import Footer from "./components/footer";
+import { useState, useEffect } from 'react';
+import Preloader from './components/preloader';
 
-
+const loadData = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Data Loaded'); // Simulate data loading
+    }, 3000); // Simulate a delay
+  });
+};
 
 const App = () => {
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Fetch or initialize your client-side data
+    loadData().then((result) => {
+      setData(result);
+      setIsLoading(false);
+    });
+  }, []);
+
   return (
+    <>
+    <Preloader isLoading={isLoading} />
+    {!isLoading && (
     <div className="flex flex-col relative combined-gradient">
       <HS/>
       <P2/>
@@ -20,6 +43,8 @@ const App = () => {
       <Footer/>
        <L/>
     </div>
+    )}
+    </>
   );
 };
 

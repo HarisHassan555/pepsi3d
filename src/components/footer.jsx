@@ -4,7 +4,7 @@ import PL2 from "../assets/pepsilogo2.png";
 export default function Footer() {
   return (
     <div className="bg-[#0025FF] mt-0">
-      <div className="flex flex-wrap bg-black text-white lg:bg-[#0025FF] lg:flex-row flex-col justify-center lg:justify-between items-center min-h-[250px] gap-5">
+      <div className="flex flex-wrap bg-black text-white lg:bg-[#0025FF] lg:flex-row flex-col justify-center lg:justify-between items-center min-h-[250px] gap-5 py-[1rem]">
         <img
           className="m-6"
           width="80"
@@ -93,7 +93,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center gap-5 flex-row">
+      <div className="flex items-center justify-center py-[2rem] gap-5 flex-row">
         <a
           href="https://www.instagram.com/pepsi/"
           target="_blank"
@@ -199,7 +199,7 @@ export default function Footer() {
           </svg>
         </a>
       </div>
-      <div className="bg-black text-white text-center py-3 px-4">
+      <div className="bg-[#0025FF] text-white text-center py-3 px-4">
         <p>
           &copy; {new Date().getFullYear()} PepsiCo, Inc. All Rights Reserved.
         </p>
