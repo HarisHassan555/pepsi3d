@@ -17,7 +17,7 @@
   
 
 .combined-gradient {
-  background: linear-gradient(to bottom, #1a1a1a 0%, #0b0bc1 50%),
+  background: linear-gradient(to bottom, #1a1a1a 0%, #0b0bc1 25%),
     linear-gradient(
       to right,
       rgba(15, 23, 42, 0.8) 10%,
