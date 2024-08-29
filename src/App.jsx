@@ -12,8 +12,8 @@ import Preloader from './components/preloader';
 const loadData = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve('Data Loaded'); // Simulate data loading
-    }, 3000); // Simulate a delay
+      resolve('Data Loaded');
+    }, 3000);
   });
 };
 
